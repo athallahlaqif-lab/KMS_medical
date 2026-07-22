@@ -1,0 +1,425 @@
+/* =====================================================
+   KMS Medical Login v3.0
+   Part 1
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+    font-family:"Segoe UI",Tahoma,sans-serif;
+    overflow:hidden;
+
+}
+
+body{
+
+    background:#0f172a;
+
+}
+
+/* =====================================================
+   Background
+===================================================== */
+
+.login-bg{
+
+    position:relative;
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+}
+
+/* Foto Background */
+
+.login-bg::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:url("../images/login-bg.jpeg") center center no-repeat;
+
+    background-size:cover;
+
+    transform:scale(1.03);
+
+    z-index:1;
+
+}
+
+/* Overlay */
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        135deg,
+        rgba(13,110,253,.30),
+        rgba(15,23,42,.35)
+    );
+
+    z-index:2;
+
+}
+
+/* =====================================================
+   Card
+===================================================== */
+
+.login-card{
+
+    position:relative;
+
+    z-index:10;
+
+    border:none;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.35);
+
+}
+
+/* =====================================================
+   Left Side
+===================================================== */
+
+.login-left{
+
+    background:linear-gradient(
+        135deg,
+        #0f766e,
+        #10b981
+    );
+
+    padding:45px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+.login-left i{
+
+    font-size:80px;
+
+}
+
+.login-left h1{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    margin-top:15px;
+
+}
+
+.login-left p{
+
+    line-height:1.8;
+
+}
+
+/* =====================================================
+   Right Side
+===================================================== */
+
+.login-right{
+
+    background:#ffffff;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.login-right .p-5{
+
+    width:100%;
+
+}
+
+.login-right h2{
+
+    font-weight:700;
+
+    color:#1e293b;
+
+}
+
+.login-right p{
+
+    color:#64748b;
+
+}
+
+/* =====================================================
+   Form
+===================================================== */
+
+.form-label{
+
+    font-weight:600;
+
+    color:#334155;
+
+}
+
+.form-control{
+
+    height:54px;
+
+    border-radius:14px;
+
+    border:1px solid #dbe4f0;
+
+    transition:.3s;
+
+}
+
+.form-control:focus{
+
+    border-color:#0d6efd;
+
+    box-shadow:0 0 0 .2rem rgba(13,110,253,.15);
+
+}
+/* =====================================================
+   Button
+===================================================== */
+
+.btn{
+
+    border-radius:14px;
+
+    height:55px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-primary{
+
+    background:linear-gradient(
+        135deg,
+        #059669,
+        #10b981
+    );
+
+    border:none;
+
+}
+.btn-primary:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 12px 25px rgba(13,110,253,.35);
+
+}
+
+/* =====================================================
+   Input Group
+===================================================== */
+
+.input-group .btn{
+
+    height:54px;
+
+    border-radius:0 14px 14px 0;
+
+    border:1px solid #dbe4f0;
+
+}
+
+.input-group .form-control{
+
+    border-radius:14px 0 0 14px;
+
+}
+
+/* =====================================================
+   Footer
+===================================================== */
+
+.login-right small{
+
+    color:#94a3b8;
+
+    font-size:14px;
+
+}
+
+/* =====================================================
+   Animation
+===================================================== */
+
+.login-card{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =====================================================
+   Hover Effect
+===================================================== */
+
+.form-control:hover{
+
+    border-color:#93c5fd;
+
+}
+
+.login-card:hover{
+
+    box-shadow:
+        0 35px 80px rgba(0,0,0,.40);
+
+}
+
+/* =====================================================
+   Scrollbar
+===================================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#94a3b8;
+
+    border-radius:30px;
+
+}
+
+/* =====================================================
+   Responsive
+===================================================== */
+
+@media(max-width:992px){
+
+    html,
+    body{
+
+        overflow:auto;
+
+    }
+
+    .login-left{
+
+        display:none;
+
+    }
+
+    .login-card{
+
+        border-radius:22px;
+
+        margin:20px;
+
+    }
+
+    .login-right{
+
+        border-radius:22px;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .login-right .p-5{
+
+        padding:35px !important;
+
+    }
+
+    .login-right h2{
+
+        font-size:28px;
+
+    }
+
+    .form-control{
+
+        height:50px;
+
+    }
+
+    .btn{
+
+        height:50px;
+
+    }
+
+}
+.left-logo{
+
+    width:120px;
+
+    height:auto;
+
+    margin-bottom:25px;
+
+}
+.logo-kms{
+    width:100px;
+    height:auto;
+    display:block;
+    margin:0 auto 25px;
+}
