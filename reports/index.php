@@ -231,6 +231,20 @@ include '../includes/header.php';
                                 </a>
 
                             </div>
+
+                            <div class="col-md-4 mb-3">
+
+                                <a
+                                    href="financial_report.php"
+                                    class="btn btn-outline-success w-100">
+
+                                    <i class="bi bi-cash-coin me-2"></i>
+
+                                    Financial Report
+
+                                </a>
+
+                            </div>
                                                     </div>
 
                     </div>

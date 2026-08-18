@@ -36,7 +36,8 @@ function isLoggedIn(): bool
 function requireLogin(): void
 {
     if (!isLoggedIn()) {
-        header('Location: /kms_project/auth/login.php');
+        require_once __DIR__ . '/app.php';
+        header('Location: ' . BASE_URL . 'auth/login.php');
         exit;
     }
 }

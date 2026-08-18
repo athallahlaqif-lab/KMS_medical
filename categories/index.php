@@ -188,6 +188,14 @@ Swal.fire({
     showConfirmButton: false
 });
 <?php endif; ?>
+
+<?php if (isset($_GET['error']) && $_GET['error'] === 'inuse'): ?>
+Swal.fire({
+    icon: 'error',
+    title: 'Tidak Bisa Dihapus',
+    text: 'Kategori ini masih dipakai oleh salah satu produk. Ubah atau hapus dulu produk yang memakai kategori ini sebelum menghapus kategorinya.',
+});
+<?php endif; ?>
 </script>
 
 </body>

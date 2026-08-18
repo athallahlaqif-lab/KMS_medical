@@ -19,11 +19,11 @@ if ($search == '') {
             p.*,
             c.category_name,
             s.supplier_name
-        FROM products p
-        JOIN categories c
-            ON p.category_id = c.id
-        JOIN suppliers s
-            ON p.supplier_id = s.id
+      FROM products p
+LEFT JOIN categories c
+    ON p.category_id = c.id
+LEFT JOIN suppliers s
+    ON p.supplier_id = s.id
         ORDER BY p.id DESC
     ");
 
@@ -32,13 +32,14 @@ if ($search == '') {
     $stmt = $pdo->prepare("
         SELECT
             p.*,
-            c.category_name,
+            c.category_name,        
             s.supplier_name
-        FROM products p
-        JOIN categories c
-            ON p.category_id = c.id
-        JOIN suppliers s
-            ON p.supplier_id = s.id
+       FROM products p
+LEFT JOIN categories c
+    ON p.category_id = c.id
+LEFT JOIN suppliers s
+    ON p.supplier_id = s.id
+    ON p.supplier_id = s.id 
         WHERE
             p.product_name LIKE ?
             OR p.product_code LIKE ?

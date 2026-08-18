@@ -54,6 +54,35 @@ if (!$category) {
 
 /*
 |--------------------------------------------------------------------------
+| Cek apakah kategori masih dipakai oleh produk
+|--------------------------------------------------------------------------
+*/
+
+$sql = "
+SELECT COUNT(*) AS total
+FROM products
+WHERE category_id = :id
+";
+
+$stmt = $pdo->prepare($sql);
+
+$stmt->execute([
+
+    ':id' => $id
+
+]);
+
+$check = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if ((int) $check['total'] > 0) {
+
+    header('Location: index.php?error=inuse');
+    exit;
+
+}
+
+/*
+|--------------------------------------------------------------------------
 | Hapus Data
 |--------------------------------------------------------------------------
 */
