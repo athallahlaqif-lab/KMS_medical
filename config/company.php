@@ -13,11 +13,11 @@ declare(strict_types=1);
 */
 
 if (!defined('COMPANY_BANK_NAME')) {
-    define('COMPANY_BANK_NAME', 'Bank BCA');
+    define('COMPANY_BANK_NAME', 'Bank Mandiri');
 }
 
 if (!defined('COMPANY_BANK_ACCOUNT_NUMBER')) {
-    define('COMPANY_BANK_ACCOUNT_NUMBER', '1234567890');
+    define('COMPANY_BANK_ACCOUNT_NUMBER', '18 0000 1111 9132');
 }
 
 if (!defined('COMPANY_BANK_ACCOUNT_NAME')) {
